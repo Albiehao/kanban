@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 隐藏滚动条 */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* 主题切换过渡动画 - 只应用于特定元素 */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 为卡片等容器添加过渡 */
+.card-transition,
+.bg-white,
+.bg-gray-50,
+.dark\:bg-gray-900,
+.dark\:bg-gray-800 {
+  transition: background-color 0.3s ease;
+}
+
+/* 为文本添加过渡 */
+.text-gray-900,
+.text-white,
+.text-gray-600,
+.dark\:text-gray-300,
+.dark\:text-white {
+  transition: color 0.3s ease;
+}
+
+/* 为边框添加过渡 */
+.border,
+.border-gray-200,
+.border-gray-300,
+.dark\:border-gray-700,
+.dark\:border-gray-600 {
+  transition: border-color 0.3s ease;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* 确保页面内容完整显示 */
+  html {
+    height: 100%;
+    overflow-x: hidden;
+    background-color: hsl(var(--background)) !important;
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  body {
+    height: 100%;
+    overflow-x: hidden;
+    background-color: hsl(var(--background)) !important;
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  #app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(var(--background)) !important;
+  }
+  
+  /* 优化滚动条 */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 3px;
+  }
+  
+  /* 紧凑日历样式 */
+  .compact-calendar {
+    max-height: 200px;
+  }
+  
+  .compact-calendar .grid {
+    max-height: 150px;
+  }
+  
+  /* 任务列表固定高度和滚动 */
+  .task-list-container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .task-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+    max-height: 250px;
+  }
+  
+  .task-scroll-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .task-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .task-scroll-container::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 2px;
+  }
+  
+  .task-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground));
+  }
+  
+  /* 财务跟踪器固定高度和滚动 */
+  .finance-tracker-container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .finance-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+  }
+  
+  /* 财务统计模块固定高度 - 由组件内部控制 */
+  .finance-tabbed-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .finance-scroll-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .finance-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .finance-scroll-container::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 2px;
+  }
+  
+  .finance-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground));
+  }
+  
+  /* 课程表固定高度 - 由组件内部控制 */
+  .schedule-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .schedule-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+  }
+  
+  .schedule-scroll-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .schedule-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .schedule-scroll-container::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 2px;
+  }
+  
+  .schedule-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground));
+  }
+  
+  /* 任务统计固定高度和滚动 */
+  .task-stats-container {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .task-stats-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+    max-height: 150px;
+  }
+  
+  .task-stats-scroll-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .task-stats-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .task-stats-scroll-container::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 2px;
+  }
+  
+  .task-stats-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground));
+  }
+  
+  /* 任务提醒融合组件固定高度和滚动 */
+  .task-reminder-container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .task-reminder-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 250px;
+  }
+  
+  .task-reminder-scroll-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .task-reminder-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .task-reminder-scroll-container::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 2px;
+  }
+  
+  .task-reminder-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground));
+  }
+  
+  /* AI对话模块固定高度 - 由组件内部控制 */
+  .ai-chat-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ai-chat-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .ai-chat-scroll-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .ai-chat-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .ai-chat-scroll-container::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 2px;
+  }
+  
+  .ai-chat-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground));
+  }
+}

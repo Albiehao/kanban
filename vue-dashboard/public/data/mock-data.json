@@ -1,0 +1,616 @@
+{
+  "courses": {
+    "header": {
+      "status": "success",
+      "message": "获取课程表成功",
+      "total_count": 134
+    },
+    "data": [
+      {
+        "course_name": "软件工程",
+        "classroom": "好学楼B209",
+        "date": "2025-09-01",
+        "teacher": "孙锦程",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-01",
+        "teacher": "刘丹",
+        "periods": "8-10节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼B409",
+        "date": "2025-09-02",
+        "teacher": "聂小燕",
+        "periods": "3-5节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-02",
+        "teacher": "刘丹",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼B409",
+        "date": "2025-09-03",
+        "teacher": "聂小燕",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "马克思主义基本原理",
+        "classroom": "德润讲堂",
+        "date": "2025-09-03",
+        "teacher": "陈惠珍",
+        "periods": "3-4节"
+      },
+      {
+        "course_name": "JavaEE基础",
+        "classroom": "力行楼A400",
+        "date": "2025-09-03",
+        "teacher": "孙宁",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "软件工程",
+        "classroom": "好学楼B209",
+        "date": "2025-09-04",
+        "teacher": "孙锦程",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-04",
+        "teacher": "刘丹",
+        "periods": "3-5节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼A400",
+        "date": "2025-09-04",
+        "teacher": "聂小燕",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "\"四史\"教育",
+        "classroom": "德润讲堂",
+        "date": "2025-09-05",
+        "teacher": "王镖",
+        "periods": "1-4节"
+      },
+      {
+        "course_name": "JavaEE基础",
+        "classroom": "力行楼A400",
+        "date": "2025-09-05",
+        "teacher": "孙宁",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-06",
+        "teacher": "刘丹",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "软件工程",
+        "classroom": "好学楼B209",
+        "date": "2025-09-08",
+        "teacher": "孙锦程",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼A400",
+        "date": "2025-09-08",
+        "teacher": "聂小燕",
+        "periods": "3-5节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-08",
+        "teacher": "刘丹",
+        "periods": "8-10节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-09",
+        "teacher": "刘丹",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼A400",
+        "date": "2025-09-10",
+        "teacher": "聂小燕",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "马克思主义基本原理",
+        "classroom": "德润讲堂",
+        "date": "2025-09-10",
+        "teacher": "陈惠珍",
+        "periods": "3-4节"
+      },
+      {
+        "course_name": "JavaEE基础",
+        "classroom": "力行楼A400",
+        "date": "2025-09-10",
+        "teacher": "孙宁",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-10",
+        "teacher": "刘丹",
+        "periods": "8-9节"
+      },
+      {
+        "course_name": "软件工程",
+        "classroom": "好学楼B209",
+        "date": "2025-09-11",
+        "teacher": "孙锦程",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼A400",
+        "date": "2025-09-11",
+        "teacher": "聂小燕",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "\"四史\"教育",
+        "classroom": "德润讲堂",
+        "date": "2025-09-12",
+        "teacher": "王镖",
+        "periods": "1-4节"
+      },
+      {
+        "course_name": "JavaEE基础",
+        "classroom": "力行楼A400",
+        "date": "2025-09-12",
+        "teacher": "孙宁",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "软件工程",
+        "classroom": "好学楼B209",
+        "date": "2025-09-15",
+        "teacher": "孙锦程",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼A400",
+        "date": "2025-09-15",
+        "teacher": "聂小燕",
+        "periods": "3-5节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-15",
+        "teacher": "刘丹",
+        "periods": "8-10节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-16",
+        "teacher": "刘丹",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼A400",
+        "date": "2025-09-17",
+        "teacher": "聂小燕",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "马克思主义基本原理",
+        "classroom": "好学楼B100",
+        "date": "2025-09-17",
+        "teacher": "陈惠珍",
+        "periods": "3-4节"
+      },
+      {
+        "course_name": "JavaEE基础",
+        "classroom": "力行楼A400",
+        "date": "2025-09-17",
+        "teacher": "孙宁",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "软件工程",
+        "classroom": "好学楼B209",
+        "date": "2025-09-18",
+        "teacher": "孙锦程",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼A400",
+        "date": "2025-09-18",
+        "teacher": "聂小燕",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "马克思主义基本原理",
+        "classroom": "好学楼B100",
+        "date": "2025-09-19",
+        "teacher": "陈惠珍",
+        "periods": "3-4节"
+      },
+      {
+        "course_name": "JavaEE基础",
+        "classroom": "力行楼A400",
+        "date": "2025-09-19",
+        "teacher": "孙宁",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "软件工程",
+        "classroom": "好学楼B209",
+        "date": "2025-09-22",
+        "teacher": "孙锦程",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼B400",
+        "date": "2025-09-22",
+        "teacher": "聂小燕",
+        "periods": "3-4节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-22",
+        "teacher": "刘丹",
+        "periods": "8-10节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼B409",
+        "date": "2025-09-23",
+        "teacher": "聂小燕",
+        "periods": "3-5节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-23",
+        "teacher": "刘丹",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼A400",
+        "date": "2025-09-24",
+        "teacher": "聂小燕",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "马克思主义基本原理",
+        "classroom": "好学楼B100",
+        "date": "2025-09-24",
+        "teacher": "陈惠珍",
+        "periods": "3-4节"
+      },
+      {
+        "course_name": "JavaEE基础",
+        "classroom": "力行楼A400",
+        "date": "2025-09-24",
+        "teacher": "孙宁",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-24",
+        "teacher": "刘丹",
+        "periods": "8-9节"
+      },
+      {
+        "course_name": "软件工程",
+        "classroom": "好学楼B209",
+        "date": "2025-09-25",
+        "teacher": "孙锦程",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼A400",
+        "date": "2025-09-25",
+        "teacher": "聂小燕",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "马克思主义基本原理",
+        "classroom": "好学楼B100",
+        "date": "2025-09-26",
+        "teacher": "陈惠珍",
+        "periods": "3-4节"
+      },
+      {
+        "course_name": "JavaEE基础",
+        "classroom": "力行楼A400",
+        "date": "2025-09-26",
+        "teacher": "孙宁",
+        "periods": "6-7节"
+      },
+      {
+        "course_name": "软件工程",
+        "classroom": "好学楼B209",
+        "date": "2025-09-29",
+        "teacher": "孙锦程",
+        "periods": "1-2节"
+      },
+      {
+        "course_name": "JavaEE基础",
+        "classroom": "力行楼A400",
+        "date": "2025-09-29",
+        "teacher": "孙宁",
+        "periods": "3-4节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-29",
+        "teacher": "刘丹",
+        "periods": "8-10节"
+      },
+      {
+        "course_name": "移动应用开发技术",
+        "classroom": "力行楼B409",
+        "date": "2025-09-30",
+        "teacher": "聂小燕",
+        "periods": "3-5节"
+      },
+      {
+        "course_name": "操作系统",
+        "classroom": "好学楼B210",
+        "date": "2025-09-30",
+        "teacher": "刘丹",
+        "periods": "6-7节"
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "title": "完成数学作业",
+      "completed": false,
+      "priority": "high",
+      "date": "2025-01-20"
+    },
+    {
+      "id": 2,
+      "title": "准备英语演讲",
+      "completed": false,
+      "priority": "high",
+      "date": "2025-01-20"
+    },
+    {
+      "id": 3,
+      "title": "复习计算机网络",
+      "completed": true,
+      "priority": "medium",
+      "date": "2025-01-20"
+    },
+    {
+      "id": 4,
+      "title": "完成软件工程实验",
+      "completed": false,
+      "priority": "high",
+      "date": "2025-01-21"
+    },
+    {
+      "id": 5,
+      "title": "准备操作系统考试",
+      "completed": true,
+      "priority": "high",
+      "date": "2025-01-21"
+    },
+    {
+      "id": 6,
+      "title": "写JavaEE项目报告",
+      "completed": false,
+      "priority": "medium",
+      "date": "2025-01-22"
+    },
+    {
+      "id": 7,
+      "title": "学习移动应用开发",
+      "completed": true,
+      "priority": "low",
+      "date": "2025-01-22"
+    },
+    {
+      "id": 8,
+      "title": "准备马克思主义考试",
+      "completed": false,
+      "priority": "medium",
+      "date": "2025-01-23"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "type": "expense",
+      "amount": 45.5,
+      "category": "餐饮",
+      "description": "午餐",
+      "date": "2025-01-20"
+    },
+    {
+      "id": 2,
+      "type": "income",
+      "amount": 500,
+      "category": "兼职",
+      "description": "周末兼职工资",
+      "date": "2025-01-19"
+    },
+    {
+      "id": 3,
+      "type": "expense",
+      "amount": 320,
+      "category": "学习",
+      "description": "购买教材",
+      "date": "2025-01-18"
+    },
+    {
+      "id": 4,
+      "type": "expense",
+      "amount": 180,
+      "category": "交通",
+      "description": "地铁卡充值",
+      "date": "2025-01-17"
+    },
+    {
+      "id": 5,
+      "type": "expense",
+      "amount": 200,
+      "category": "娱乐",
+      "description": "电影票",
+      "date": "2025-01-16"
+    },
+    {
+      "id": 6,
+      "type": "income",
+      "amount": 800,
+      "category": "奖学金",
+      "description": "学期奖学金",
+      "date": "2025-01-15"
+    },
+    {
+      "id": 7,
+      "type": "expense",
+      "amount": 120,
+      "category": "餐饮",
+      "description": "聚餐",
+      "date": "2025-01-14"
+    },
+    {
+      "id": 8,
+      "type": "expense",
+      "amount": 150,
+      "category": "学习",
+      "description": "在线课程",
+      "date": "2025-01-13"
+    },
+    {
+      "id": 9,
+      "type": "expense",
+      "amount": 80,
+      "category": "餐饮",
+      "description": "早餐",
+      "date": "2025-01-12"
+    },
+    {
+      "id": 10,
+      "type": "expense",
+      "amount": 60,
+      "category": "交通",
+      "description": "打车费",
+      "date": "2025-01-11"
+    },
+    {
+      "id": 11,
+      "type": "income",
+      "amount": 200,
+      "category": "兼职",
+      "description": "家教收入",
+      "date": "2025-01-10"
+    },
+    {
+      "id": 12,
+      "type": "expense",
+      "amount": 300,
+      "category": "学习",
+      "description": "购买编程书籍",
+      "date": "2025-01-09"
+    }
+  ],
+  "financeStats": {
+    "monthlyIncome": 2500,
+    "monthlyExpense": 1800,
+    "balance": 700,
+    "expenseByCategory": [
+      {
+        "category": "餐饮",
+        "amount": 450,
+        "color": "#ef4444"
+      },
+      {
+        "category": "学习",
+        "amount": 320,
+        "color": "#3b82f6"
+      },
+      {
+        "category": "交通",
+        "amount": 180,
+        "color": "#10b981"
+      },
+      {
+        "category": "娱乐",
+        "amount": 200,
+        "color": "#f59e0b"
+      }
+    ]
+  },
+  "user": {
+    "id": 1,
+    "username": "student001",
+    "email": "student@university.edu.cn",
+    "role": "student",
+    "name": "张三",
+    "studentId": "2021001001",
+    "major": "计算机科学与技术",
+    "grade": "2021级"
+  },
+  "notifications": [
+    {
+      "id": 1,
+      "title": "课程提醒",
+      "message": "软件工程课程将在10分钟后开始",
+      "type": "course",
+      "time": "2025-01-20 08:50:00",
+      "read": false
+    },
+    {
+      "id": 2,
+      "title": "任务提醒",
+      "message": "数学作业截止日期临近",
+      "type": "task",
+      "time": "2025-01-20 14:30:00",
+      "read": false
+    },
+    {
+      "id": 3,
+      "title": "财务提醒",
+      "message": "本月预算已使用80%",
+      "type": "finance",
+      "time": "2025-01-19 20:00:00",
+      "read": true
+    },
+    {
+      "id": 4,
+      "title": "系统通知",
+      "message": "系统将在今晚进行维护",
+      "type": "system",
+      "time": "2025-01-19 18:00:00",
+      "read": true
+    }
+  ]
+}
