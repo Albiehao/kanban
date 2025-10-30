@@ -7,8 +7,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-12345678}
       MYSQL_DATABASE: ${DB_NAME:-todo_db}
-      MYSQL_USER: ${DB_USER:-root}
-      MYSQL_PASSWORD: ${DB_PASSWORD:-12345678}
     ports:
       - "${DB_PORT:-3306}:3306"
     volumes:
