@@ -56,8 +56,7 @@ async def list_deepseek_configs(
     configs = query.order_by(DeepSeekConfig.created_at.desc()).all()
     
     return {
-        "count": len(configs),
-        "configs": [config.to_dict(include_api_key=True) for config in configs]
+        "data": [config.to_dict(include_api_key=True) for config in configs]
     }
 
 
@@ -144,7 +143,7 @@ async def create_deepseek_config(
     return {
         "success": True,
         "message": "配置创建成功",
-        "config": config.to_dict(include_api_key=True)
+        "data": config.to_dict(include_api_key=True)
     }
 
 
@@ -195,7 +194,7 @@ async def update_deepseek_config(
     return {
         "success": True,
         "message": "配置更新成功",
-        "config": config.to_dict(include_api_key=True)
+        "data": config.to_dict(include_api_key=True)
     }
 
 
@@ -279,6 +278,6 @@ async def toggle_deepseek_config(
     return {
         "success": True,
         "message": f"配置已{action}",
-        "config": config.to_dict(include_api_key=True)
+        "data": config.to_dict(include_api_key=True)
     }
 

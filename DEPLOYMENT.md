@@ -43,7 +43,11 @@ cd todo
 复制环境变量示例文件：
 
 ```bash
-cp .env.example .env
+# Linux / macOS
+cp env.template .env
+
+# Windows PowerShell
+Copy-Item env.template .env
 ```
 
 编辑 `.env` 文件，根据需要修改配置：
@@ -62,8 +66,8 @@ BACKEND_PORT=8000
 # 前端端口
 FRONTEND_PORT=80
 
-# 前端API地址（构建时使用）
-VITE_API_BASE_URL=http://localhost:8000/api
+# 前端API地址（Docker 部署推荐使用 /api，由 Nginx 代理至后端）
+VITE_API_BASE_URL=/api
 
 # DeepSeek AI配置（可选）
 DEEPSEEK_API_KEY=your_deepseek_api_key_here
@@ -353,7 +357,7 @@ docker-compose exec backend env | grep DB_
 **解决方案**:
 - 检查nginx配置中的API代理设置
 - 确认后端服务正常运行：`curl http://localhost:8000/health`
-- 检查浏览器控制台的网络请求
+- 确认 `.env` 中 `VITE_API_BASE_URL=/api` （Docker 中推荐使用 `/api`）
 
 #### 3. 端口已被占用
 
@@ -432,6 +436,6 @@ services:
 
 ---
 
-**最后更新**: 2025-01-XX
-**版本**: 1.0.0
+**最后更新**: 2025-10-30
+**版本**: 1.1.0
 

@@ -13,7 +13,7 @@ class GetCoursesTool(BaseTool):
         return "get_courses"
     
     def get_description(self) -> str:
-        return "获取用户的课程表，支持按日期筛选"
+        return "获取用户的课程表，支持按日期筛选。当用户询问课程、课表、课程安排、明天上什么课、今天的课程时必须调用此工具获取真实数据。不要提供示例数据。"
     
     def get_parameters_schema(self) -> Dict[str, Any]:
         return {

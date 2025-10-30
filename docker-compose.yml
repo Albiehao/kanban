@@ -7,10 +7,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-12345678}
       MYSQL_DATABASE: ${DB_NAME:-todo_db}
-      MYSQL_USER: ${DB_USER:-root}
-      MYSQL_PASSWORD: ${DB_PASSWORD:-12345678}
     ports:
       - "${DB_PORT:-3306}:3306"
+    command: ["mysqld", "--default-authentication-plugin=mysql_native_password"]
     volumes:
       - mysql_data:/var/lib/mysql
       - ./backend/scripts/init_db.sql:/docker-entrypoint-initdb.d/init.sql:ro
@@ -20,7 +19,8 @@ services:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD:-12345678}"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 10
+      start_period: 30s
 
   # 后端服务
   backend:
@@ -35,7 +35,7 @@ services:
     environment:
       DB_HOST: db
       DB_PORT: 3306
-      DB_USER: ${DB_USER:-root}
+      DB_USER: root
       DB_PASSWORD: ${DB_PASSWORD:-12345678}
       DB_NAME: ${DB_NAME:-todo_db}
       DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
@@ -47,11 +47,6 @@ services:
       - ./backend/uploads:/app/uploads
     networks:
       - todo_network
-    healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
 
   # 前端服务
   frontend:

@@ -36,13 +36,8 @@ class GetCurrentTimeTool(BaseTool):
     async def execute(self, format: str = "full", timezone: str = None) -> Dict[str, Any]:
         """执行获取当前时间"""
         try:
-            # 获取当前时间
-            if timezone:
-                # 如果指定了时区（这里简化处理，实际可以使用pytz）
-                # 默认使用本地时区
-                now = datetime.now()
-            else:
-                now = datetime.now()
+            # 获取当前时间（使用本地时区）
+            now = datetime.now()
             
             # 格式化为字符串
             date_str = now.strftime("%Y-%m-%d")

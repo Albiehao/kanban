@@ -166,10 +166,12 @@ class DeepSeekService:
         except Exception as e:
             error_msg = str(e)
             # 如果是API错误，返回友好提示
-            if "rate_limit" in error_msg.lower():
-                yield f"[错误: API请求频率限制，请稍后再试]"
+            if "rate_limit" in error_msg.lower() or "governor" in error_msg.lower():
+                yield f"[错误: API请求频率限制，请稍后再试（每分钟最多{self.rate_limit_per_minute}次）]"
             elif "insufficient_quota" in error_msg.lower():
                 yield f"[错误: API配额不足]"
+            elif "authentication" in error_msg.lower() or "api key" in error_msg.lower():
+                yield f"[错误: API密钥无效，请联系管理员]"
             else:
                 yield f"[错误: {error_msg}]"
             raise

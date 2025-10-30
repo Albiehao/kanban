@@ -7,10 +7,14 @@
 如果还没有 `.env` 文件，请复制 `env.template` 并修改：
 
 ```bash
+# Linux / macOS
 cp env.template .env
+
+# Windows PowerShell
+Copy-Item env.template .env
 ```
 
-然后编辑 `.env` 文件，修改数据库密码等配置。
+然后编辑 `.env` 文件，修改数据库密码等配置，并确保 `VITE_API_BASE_URL=/api`（Docker 中由前端 Nginx 反向代理到 `backend:8000`）。
 
 ### 2. 配置 Docker 镜像源（如果网络有问题）
 
@@ -60,6 +64,17 @@ docker-compose up -d
 # 3. 查看日志
 docker-compose logs -f
 ```
+
+## 🔑 常用环境变量速查
+
+- `DB_HOST=db`
+- `DB_PORT=3306`
+- `DB_USER=root`
+- `DB_PASSWORD=<请修改>`
+- `DB_NAME=todo_db`
+- `BACKEND_PORT=8000`
+- `FRONTEND_PORT=80`
+- `VITE_API_BASE_URL=/api`  ← Docker 场景推荐
 
 ## 📊 检查部署状态
 
@@ -149,7 +164,7 @@ docker-compose logs -f db
 **解决方案**:
 - 检查后端服务是否运行：`curl http://localhost:8000/health`
 - 检查浏览器控制台的网络请求
-- 确认 `VITE_API_BASE_URL=/api` 在 `.env` 中已配置
+- 确认 `.env` 中 `VITE_API_BASE_URL=/api`（Nginx 已代理 `/api` → `http://backend:8000/api`）
 
 ## 📝 默认账号
 

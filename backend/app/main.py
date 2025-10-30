@@ -11,6 +11,10 @@ from app.routers import (
     auth, user, admin, task, course, notifications, finance, finance_stats, edu, ai, updates, deepseek_config
 )
 
+import time
+from sqlalchemy import text
+from app.database import engine
+
 # 创建应用
 app = FastAPI(
     title="Todo Backend API",
@@ -46,8 +50,27 @@ app.include_router(deepseek_config.router)
 async def startup_event():
     """启动时初始化数据库"""
     print("[INFO] 初始化数据库...")
-    create_tables()
-    
+
+    # 等待数据库就绪（避免容器首次启动时连接失败导致应用退出）
+    max_attempts = 30
+    for attempt in range(1, max_attempts + 1):
+        try:
+            with engine.connect() as conn:
+                conn.execute(text("SELECT 1"))
+            print(f"[INFO] 数据库连接成功（第 {attempt} 次尝试）")
+            break
+        except Exception as e:
+            print(f"[WARN] 数据库未就绪，重试中（第 {attempt}/{max_attempts} 次）：{e}")
+            time.sleep(2)
+    else:
+        # 超出重试次数
+        print("[ERROR] 数据库长时间未就绪，启动继续但可能导致功能异常")
+
+    try:
+        create_tables()
+    except Exception as e:
+        print(f"[ERROR] 创建数据表失败：{e}")
+
     # 初始化超级管理员
     db = SessionLocal()
     try:
