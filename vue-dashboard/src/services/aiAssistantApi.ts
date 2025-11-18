@@ -1,5 +1,5 @@
 // AI智能助手 API
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api'
+import { requestWithAuth as request } from './authApi'
 
 export interface AIMessage {
   id: number
@@ -14,25 +14,6 @@ export interface AIConversation {
   title: string
   createdAt: string
   updatedAt: string
-}
-
-const request = async <T>(endpoint: string, options: RequestInit = {}): Promise<T> => {
-  const defaultOptions: RequestInit = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    ...options
-  }
-
-  // 直接请求真实服务器
-  const response = await fetch(`${API_BASE_URL}${endpoint}`, defaultOptions)
-  
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`)
-  }
-
-  const data = await response.json()
-  return data
 }
 
 export const aiAssistantApi = {

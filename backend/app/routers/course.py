@@ -185,6 +185,7 @@ async def fetch_courses_from_edu(
         )
     
     api_key = binding.get("api_key")
+    api_url = binding.get("api_url", "http://160.202.229.142:8000/api/v1/api/courses")
     
     # 查询参数
     params = {}
@@ -199,7 +200,7 @@ async def fetch_courses_from_edu(
     try:
         headers = {"X-API-Key": api_key}
         response = requests.get(
-            THIRD_PARTY_API_BASE_URL,
+            api_url,
             headers=headers,
             params=params,
             timeout=10

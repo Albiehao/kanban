@@ -33,9 +33,8 @@ class TodoClient:
                 self.token = data["token"]
                 self.headers = {"Authorization": f"Bearer {self.token}"}
                 print(f"[SUCCESS] 登录成功!")
-                print(f"用户: {data['user']['username']}")
-                print(f"角色: {data['user']['role']}")
-                print(f"权限: {', '.join(data['user']['permissions'])}")
+                print(f"用户: {data['user'].get('username')}")
+                print(f"角色: {data['user'].get('role')}")
                 return True
             else:
                 print(f"[FAILED] 登录失败: {response.json()}")
@@ -71,9 +70,10 @@ class TodoClient:
                 headers=self.headers
             )
             if response.status_code == 200:
-                tasks = response.json()
-                print(f"[SUCCESS] 获取到 {len(tasks)} 个任务")
-                return tasks
+                result = response.json()
+                items = result.get('data', {}).get('items', [])
+                print(f"[SUCCESS] 获取到 {len(items)} 个任务")
+                return items
             else:
                 print(f"[FAILED] 获取任务失败: {response.json()}")
                 return None
@@ -89,8 +89,9 @@ class TodoClient:
                 headers=self.headers
             )
             if response.status_code == 200:
-                courses = response.json()
-                print(f"[SUCCESS] 获取到 {courses.get('total', 0)} 个课程")
+                result = response.json()
+                courses = result.get('data', [])
+                print(f"[SUCCESS] 获取到 {len(courses)} 个课程")
                 return courses
             else:
                 print(f"[FAILED] 获取课程失败: {response.json()}")
@@ -107,7 +108,8 @@ class TodoClient:
                 headers=self.headers
             )
             if response.status_code == 200:
-                transactions = response.json()
+                result = response.json()
+                transactions = result.get('data', [])
                 print(f"[SUCCESS] 获取到 {len(transactions)} 条交易记录")
                 return transactions
             else:
@@ -117,42 +119,7 @@ class TodoClient:
             print(f"[ERROR] 请求失败: {e}")
             return None
     
-    def logout(self) -> bool:
-        """用户登出"""
-        try:
-            response = requests.post(
-                f"{self.base_url}/api/auth/logout",
-                headers=self.headers
-            )
-            if response.status_code == 200:
-                print("[SUCCESS] 登出成功")
-                return True
-            else:
-                print(f"[FAILED] 登出失败: {response.json()}")
-                return False
-        except Exception as e:
-            print(f"[ERROR] 请求失败: {e}")
-            return False
-    
-    def refresh_token(self) -> bool:
-        """刷新Token"""
-        try:
-            response = requests.post(
-                f"{self.base_url}/api/auth/refresh",
-                headers=self.headers
-            )
-            if response.status_code == 200:
-                data = response.json()
-                self.token = data["token"]
-                self.headers = {"Authorization": f"Bearer {self.token}"}
-                print("[SUCCESS] Token刷新成功")
-                return True
-            else:
-                print(f"[FAILED] Token刷新失败: {response.json()}")
-                return False
-        except Exception as e:
-            print(f"[ERROR] 请求失败: {e}")
-            return False
+    # 注：当前后端未实现登出和刷新Token接口，示例中不包含这些步骤
 
 
 def main():
@@ -165,9 +132,9 @@ def main():
     client = TodoClient()
     
     # 测试默认账户登录
-    print("\n1. 使用admin账户登录")
+    print("\n1. 使用super_admin账户登录")
     print("-" * 60)
-    if not client.login("admin", "admin123"):
+    if not client.login("super_admin", "super_admin"):
         print("登录失败，无法继续")
         return
     
@@ -193,15 +160,7 @@ def main():
     print("-" * 60)
     transactions = client.get_transactions()
     
-    # 刷新token
-    print("\n6. 刷新Token")
-    print("-" * 60)
-    client.refresh_token()
-    
-    # 登出
-    print("\n7. 用户登出")
-    print("-" * 60)
-    client.logout()
+    # 注：演示结束，不包含刷新Token和登出步骤
     
     print("\n" + "=" * 60)
     print("演示完成!")

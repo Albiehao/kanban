@@ -8,8 +8,8 @@ import json
 # 测试登录
 url = "http://127.0.0.1:8000/api/auth/login"
 data = {
-    "username": "admin",
-    "password": "admin123"
+    "username": "super_admin",
+    "password": "super_admin"
 }
 
 try:

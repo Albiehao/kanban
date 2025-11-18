@@ -226,10 +226,24 @@ const modules = ref<ModuleConfig[]>([
     // 数据现在通过API动态加载，不需要重新生成
   }
 
-  const toggleTask = (id: number) => {
+  const toggleTask = async (id: number) => {
     const task = tasks.value.find(t => t.id === id)
-    if (task) {
-      task.completed = !task.completed
+    if (!task) return
+    const prev = task.completed
+    // 先本地切换，提升交互流畅度
+    task.completed = !prev
+    try {
+      const updated = await taskApi.toggleTask(id)
+      // 用后端返回的最新状态覆盖
+      const idx = tasks.value.findIndex(t => t.id === id)
+      if (idx !== -1 && updated) {
+        tasks.value[idx] = { ...tasks.value[idx], ...updated }
+      }
+    } catch (e) {
+      // 失败回滚本地状态
+      task.completed = prev
+      console.error('切换任务完成状态失败:', e)
+      throw e
     }
   }
 

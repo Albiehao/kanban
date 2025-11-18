@@ -32,7 +32,7 @@
     </div>
 
     <!-- 右侧登录表单区域 -->
-    <div class="flex-1 flex flex-col justify-center py-12 px-6 sm:px-12 lg:px-24 bg-white">
+    <div class="flex-1 flex flex-col justify-center py-12 px-6 sm:px-12 lg:px-24 bg-white dark:bg-gray-900 dark:text-gray-100">
       <div class="w-full max-w-md">
         <h2 class="text-3xl font-bold text-gray-900 mb-2">登录到Dashboard Kit</h2>
         <p class="text-gray-600 mb-8">请输入您的账户信息继续</p>
@@ -55,7 +55,7 @@
                 type="text"
                 required
                 placeholder="用户名"
-                class="pl-11 w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="pl-11 w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white placeholder:text-gray-400"
               />
             </div>
           </div>
@@ -78,7 +78,7 @@
                 :type="showPassword ? 'text' : 'password'"
                 required
                 placeholder="密码"
-                class="pl-11 pr-16 w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="pl-11 pr-16 w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white placeholder:text-gray-400"
               />
               <button
                 type="button"
@@ -148,7 +148,7 @@
                 type="text"
                 required
                 placeholder="用户名"
-                class="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white placeholder:text-gray-400"
               />
           </div>
 
@@ -162,7 +162,7 @@
                 type="email"
                 required
                 placeholder="邮箱"
-                class="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white placeholder:text-gray-400"
               />
           </div>
 
@@ -176,7 +176,7 @@
                 type="password"
                 required
                 placeholder="密码"
-                class="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white placeholder:text-gray-400"
               />
           </div>
 
@@ -190,7 +190,7 @@
                 type="password"
                 required
                 placeholder="确认密码"
-                class="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white placeholder:text-gray-400"
               />
           </div>
 
