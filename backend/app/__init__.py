@@ -1,2 +1,0 @@
-"""Todo Backend Application"""
-

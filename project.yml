@@ -1,0 +1,21 @@
+name: StressApp
+options:
+  bundleIdPrefix: com.albiehao
+settings:
+  base:
+    IPHONEOS_DEPLOYMENT_TARGET: 17.0
+    SWIFT_VERSION: 5.10
+targets:
+  StressApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: StressApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.albiehao.StressApp
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_NSHealthShareUsageDescription: Stress App reads heart-rate variability data to calculate a personal relative stress score.
+        CODE_SIGN_ENTITLEMENTS: StressApp/StressApp.entitlements
+    entitlements:
+      path: StressApp/StressApp.entitlements
